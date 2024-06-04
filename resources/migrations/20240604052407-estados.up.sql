@@ -1,5 +1,5 @@
 CREATE TABLE estados
 (
-    estado_id INT PRIMARY KEY,
+    estado_id SERIAL PRIMARY KEY,
     nombre VARCHAR(250)
 );

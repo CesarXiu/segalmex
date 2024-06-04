@@ -17,22 +17,22 @@
     (migrations/migrate ["migrate"] (select-keys env [:database-url]))
     (f)))
 
-(deftest test-users
+(deftest test-estados
   (jdbc/with-transaction [t-conn *db* {:rollback-only true}]
-    (is (= 1 (db/create-user!
+    (is (= 1 (db/create-estados!
               t-conn
-              {:id         "1"
-               :first_name "Sam"
-               :last_name  "Smith"
-               :email      "sam.smith@example.com"
-               :pass       "pass"}
-              {})))
-    (is (= {:id         "1"
-            :first_name "Sam"
-            :last_name  "Smith"
-            :email      "sam.smith@example.com"
-            :pass       "pass"
-            :admin      nil
-            :last_login nil
-            :is_active  nil}
-           (db/get-user t-conn {:id "1"} {})))))
+              {
+               :nombre "Quintana Roo"}
+              {:connection t-conn})))
+    (is (= {:estado_id         1
+            :nombre "Quintana Roo"}
+           (db/get-estados t-conn {})))))
+(deftest test-productos
+  (jdbc/with-transaction [t-conn *db* {:rollback-only true}]
+    (is (= 1 (db/create-estados!
+              t-conn
+              {:nombre         "Carne asada"}
+              {:connection t-conn})))
+    (is (= {:estado_id         1 :nombre         "Carne asada"}
+           (-> (db/get-estados t-conn{})(first)(select-keys [:nombre]))))))
+

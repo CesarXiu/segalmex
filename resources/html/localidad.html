@@ -2,6 +2,22 @@
 {% block localidades %}
   <div class="content">
     <h3>Localidad</h3>
+    <table class="table is-bordered is-striped is-narrow is-hoverable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Localidad</th>
+                <th>Municipio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Localidad 1</td>
+                <td>Municipio 1</td>
+            </tr>
+        </tbody>
+    </table>
     <div class="options">
         <h2 class="title is-2">Agregar nueva localidad</h2>
         <form>
@@ -30,7 +46,7 @@
         </form>
     </div>
     <div class="options">
-        <h2 class="title is-2">Actualizar nombres de las localidades</h2>
+        <h2 class="title is-2">Actualizar Localidad</h2>
         <form>
             <div class="field">
                 <label class="label" for="localidad">Localidad:</label>
@@ -41,6 +57,19 @@
                             <option value="localidad2">Localidad 2</option>
                             <option value="localidad3">Localidad 3</option>
                             <!-- Add more options for each locality -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="municipio">Municipio:</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="municipio" name="municipio">
+                            <option value="municipio1">Municipio 1</option>
+                            <option value="municipio2">Municipio 2</option>
+                            <option value="municipio3">Municipio 3</option>
+                            <!-- Add more options for each municipality -->
                         </select>
                     </div>
                 </div>

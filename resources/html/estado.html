@@ -2,13 +2,30 @@
 {% block localidades %}
 <div class="content">
 <h3>Estado</h3>
+<table class="table is-bordered is-striped is-narrow is-hoverable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for estado in estados %}
+            <td>{{ estado.estado_id }}</td>
+            <td>{{ estado.nombre }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
     <div class="options">
         <h2 class="title is-2">Agregar nuevo estado</h2>
-        <form>
+        <form action="/localidades/estados/nuevo" method="POST">
+            {% csrf-field %}
             <div class="field">
                 <label class="label" for="estado">Nombre del estado:</label>
                 <div class="control">
-                    <input class="input" type="text" id="estado" name="estado">
+                    <input class="input" type="text" id="estado" name="nombre">
                 </div>
             </div>
             <div class="control">
@@ -17,7 +34,7 @@
         </form>
     </div>
     <div class="options">
-        <h2 class="title is-2">Actualizar nombre del estado</h2>
+        <h2 class="title is-2">Actualizar Estado</h2>
         <form>
             <div class="field">
                 <label class="label" for="estado">Estado:</label>
