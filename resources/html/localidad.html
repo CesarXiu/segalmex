@@ -1,0 +1,81 @@
+{% extends "localidades.html" %}
+{% block content %}
+  <div class="content">
+    <h3>CADER</h3>
+    <div class="options">
+        <h2 class="title is-2">Agregar nueva localidad</h2>
+        <form>
+            <div class="field">
+                <label class="label" for="localidad">Nombre de la localidad:</label>
+                <div class="control">
+                    <input class="input" type="text" id="localidad" name="localidad">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="municipio">Municipio:</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="municipio" name="municipio">
+                            <option value="municipio1">Municipio 1</option>
+                            <option value="municipio2">Municipio 2</option>
+                            <option value="municipio3">Municipio 3</option>
+                            <!-- Add more options for each municipality -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-success" type="submit">Agregar</button>
+            </div>
+        </form>
+    </div>
+    <div class="options">
+        <h2 class="title is-2">Actualizar nombres de las localidades</h2>
+        <form>
+            <div class="field">
+                <label class="label" for="localidad">Localidad:</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="localidad" name="localidad">
+                            <option value="localidad1">Localidad 1</option>
+                            <option value="localidad2">Localidad 2</option>
+                            <option value="localidad3">Localidad 3</option>
+                            <!-- Add more options for each locality -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="nuevo-nombre-localidad">Nuevo nombre:</label>
+                <div class="control">
+                    <input class="input" type="text" id="nuevo-nombre-localidad" name="nuevo-nombre-localidad">
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-primary" type="submit">Actualizar</button>
+            </div>
+        </form>
+    </div>
+    <div class="options">
+        <h2 class="title is-2">Eliminar localidad</h2>
+        <form>
+            <div class="field">
+                <label class="label" for="localidad">Localidad:</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="localidad" name="localidad">
+                            <option value="localidad1">Localidad 1</option>
+                            <option value="localidad2">Localidad 2</option>
+                            <option value="localidad3">Localidad 3</option>
+                            <!-- Add more options for each locality -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-danger" type="submit">Eliminar</button>
+            </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}
