@@ -19,6 +19,8 @@
   (layout/render request "municipio.html"))
 (defn localidad-page [request]
   (layout/render request "localidad.html"))
+(defn apoyo-page [request]
+  (layout/render request "apoyo.html"))
 
 
 (defn home-routes []
@@ -31,6 +33,6 @@
    ["/localidades/estados" {:get estado-page}]
    ["/localidades/municipios" {:get municipio-page}]
    ["/localidades/localidad" {:get localidad-page}]
-   
+   ["/apoyo" {:get apoyo-page}]
    ])
 

@@ -1,6 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="content">
-    <h1>CADER</h1>
+    <h1>CADER QUINTANA ROO</h1>
+        <label class="label" for="municipio">Municipio:</label>
+        <div class="control">
+            <div class="select">
+                <select id="municipio" name="municipio">
+                    <option value="municipio">municipio 1</option>
+                    <option value="municipio">municipio 2</option>
+                    <option value="municipio">municipio 3</option>
+                </select>
+            </div>
+        </div>
+    <table>
+      <thead>
+        <tr>
+          <th>NUM.</th>
+          <th>ESTADO</th>
+          <th>MUNICIPIO</th>
+          <th>LOCALIDAD</th>
+          <th>CUADERNILLO</th>
+          <th>LOCALIDAD REAL</th>
+          <th>A. PATERNO</th>
+          <th>A. MATERNO</th>
+          <th>NOMBRE (S)</th>
+          <th>CURP</th>
+          <th>FECHA DE ENTREGA</th>
+          <th>HORA DE ENTREGA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Estado 1</td>
+          <td>Municipio 1</td>
+          <td>Localidad 1</td>
+          <td>1</td>
+          <td>Localidad 1</td>
+          <td>Apellido Paterno 1</td>
+          <td>Apellido Materno 1</td>
+          <td>Nombre 1</td>
+          <td>CURP 1</td>
+          <td>Fecha 1</td>
+          <td>Hora 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Estado 2</td>
+          <td>Municipio 2</td>
+          <td>Localidad 2</td>
+          <td>2</td>
+          <td>Localidad 2</td>
+          <td>Apellido Paterno 2</td>
+          <td>Apellido Materno 2</td>
+          <td>Nombre 2</td>
+          <td>CURP 2</td>
+          <td>Fecha 2</td>
+          <td>Hora 2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Estado 3</td>
+          <td>Municipio 3</td>
+          <td>Localidad 3</td>
+          <td>3</td>
+          <td>Localidad 3</td>
+          <td>Apellido Paterno 3</td>
+          <td>Apellido Materno 3</td>
+          <td>Nombre 3</td>
+          <td>CURP 3</td>
+          <td>Fecha 3</td>
+          <td>Hora 3</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="/apoyo" class="button is-primary">Agregar Registro</a>
+    <section class="section">
+      <div class="container">
+          {% block nuevoRegistro %}
+          {% endblock %}
+      </div>
+  </section>
   </div>
 {% endblock %}
