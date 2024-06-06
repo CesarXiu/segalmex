@@ -2,6 +2,7 @@
 {% block localidades %}
 <div class="content">
 <h3>Estado</h3>
+<hr>
 <table class="table is-bordered is-striped is-narrow is-hoverable">
     <thead>
         <tr>
@@ -18,6 +19,7 @@
         {% endfor %}
     </tbody>
 </table>
+<br> <hr>
     <div class="options">
         <h2 class="title is-2">Agregar nuevo estado</h2>
         <form action="/localidades/estados/nuevo" method="POST">
@@ -33,6 +35,7 @@
             </div>
         </form>
     </div>
+    <br> <hr>
     <div class="options">
         <h2 class="title is-2">Editar Estado</h2>
         <form action="" method="POST" id="estado-form">
@@ -61,6 +64,7 @@
             </div>
         </form>
     </div>
+    <br> <hr>
 </div>
 <script>
     document.getElementById('estado_id').addEventListener('change', function() {
