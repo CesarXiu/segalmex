@@ -10,12 +10,12 @@
         </tr>
     </thead>
     <tbody>
+        {% for estado in estados %}
         <tr>
-            {% for estado in estados %}
             <td>{{ estado.estado_id }}</td>
             <td>{{ estado.nombre }}</td>
-            {% endfor %}
         </tr>
+        {% endfor %}
     </tbody>
 </table>
     <div class="options">
@@ -34,52 +34,45 @@
         </form>
     </div>
     <div class="options">
-        <h2 class="title is-2">Actualizar Estado</h2>
-        <form>
+        <h2 class="title is-2">Editar Estado</h2>
+        <form action="" method="POST" id="estado-form">
+            {% csrf-field %}
             <div class="field">
                 <label class="label" for="estado">Estado:</label>
                 <div class="control">
                     <div class="select">
-                        <select id="estado" name="estado">
-                            <option value="estado1">Estado 1</option>
-                            <option value="estado2">Estado 2</option>
-                            <option value="estado3">Estado 3</option>
-                            <!-- Add more options for each state -->
+                        <select id="estado_id" name="estado_id">
+                            {% for estado in estados %}
+                            <option value="{{estado.estado_id}}">{{ estado.nombre }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label class="label" for="nuevo-nombre-estado">Nuevo nombre:</label>
+                <label class="label" for="nombre">Nombre:</label>
                 <div class="control">
-                    <input class="input" type="text" id="nuevo-nombre-estado" name="nuevo-nombre-estado">
+                    <input class="input" type="text" id="nuevo_nombre" name="nuevo_nombre">
                 </div>
             </div>
             <div class="control">
-                <button class="button is-primary" type="submit">Actualizar</button>
-            </div>
-        </form>
-    </div>
-    <div class="options">
-        <h2 class="title is-2">Eliminar estado</h2>
-        <form>
-            <div class="field">
-                <label class="label" for="estado">Estado:</label>
-                <div class="control">
-                    <div class="select">
-                        <select id="estado" name="estado">
-                            <option value="estado1">Estado 1</option>
-                            <option value="estado2">Estado 2</option>
-                            <option value="estado3">Estado 3</option>
-                            <!-- Add more options for each state -->
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="control">
-                <button class="button is-danger" type="submit">Eliminar</button>
+                <button class="button is-primary" type="submit" onclick="enviar('/localidades/estados/actualizar')">Actualizar</button>
+                <button class="button is-danger" type="submit" onclick="enviar('/localidades/estados/eliminar')">Eliminar</button>
             </div>
         </form>
     </div>
 </div>
+<script>
+    document.getElementById('estado_id').addEventListener('change', function() {
+        var select = document.getElementById('estado_id');
+        var input = document.getElementById('nuevo_nombre');
+        var selectedOption = select.options[select.selectedIndex];
+        input.value = selectedOption.textContent;
+    });
+    function enviar(url) {
+        var form = document.getElementById('estado-form');
+        form.action = url;
+        form.submit();
+    }
+</script>
 {% endblock %}

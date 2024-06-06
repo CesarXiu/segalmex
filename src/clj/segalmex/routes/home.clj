@@ -26,12 +26,13 @@
   (layout/render request "apoyo.html"))
 (defn post-estados [{:keys [params]}]
   (db/create-estados! params)
-  (response/found "/localidades/estados")
-  )
+  (response/found "/localidades/estados"))
 (defn put-estados [{:keys [params]}]
   (db/update-estados! params)
   (response/found "/localidades/estados"))
-
+(defn delete-estados [{:keys [params]}]
+  (db/delete-estados! params)
+  (response/found "/localidades/estados"))
 
 (defn home-routes []
   [""
@@ -46,5 +47,6 @@
    ["/apoyo" {:get apoyo-page}]
    ["/localidades/estados/nuevo" {:post post-estados}]
    ["/localidades/estados/actualizar" {:post put-estados}]
+   ["/localidades/estados/eliminar" {:post delete-estados}]
    ])
 

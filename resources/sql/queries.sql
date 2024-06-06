@@ -1,5 +1,5 @@
--- :name get-estados :? :n
--- :Obtener los estados
+-- :name get-estados :? :*
+-- :doc Obtener los estados
 SELECT * FROM estados
 
 -- :name create-estados! :! :n
@@ -9,12 +9,16 @@ INSERT INTO estados
 VALUES (:nombre)
 
 -- :name update-estados! :! :n
--- :Actualiza nombre de un estado
+-- :doc Actualiza nombre de un estado
 UPDATE estados
-SET estados = :estados
+SET nombre = :nuevo_nombre
 WHERE estado_id = :estado_id
 
 -- :name delete-estados! :! :n
--- :Eliminar un estado
+-- :doc Eliminar un estado
 DELETE FROM estados
 WHERE estado_id = :estado_id
+
+-- :name clear-estados! :! :*
+-- :doc Eliminar todos los estados
+DELETE FROM estados
