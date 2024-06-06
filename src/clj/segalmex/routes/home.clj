@@ -18,7 +18,7 @@
   (layout/render request "estado.html" {:estados (db/get-estados)} ))
 ;{:municipios (db/get-municipios)}
 (defn municipio-page [request]
-  (layout/render request "municipio.html" ))
+  (layout/render request "municipio.html" {:municipios (db/get-municipios), :estados (db/get-estados) } ))
 ;{:localidades (db/get-localidades)}
 (defn localidad-page [request]
   (layout/render request "localidad.html" ))
@@ -32,7 +32,16 @@
   (response/found "/localidades/estados"))
 (defn delete-estados [{:keys [params]}]
   (db/delete-estados! params)
-  (response/found "/localidades/estados"))
+  (response/found "/localidades/municipios"))
+(defn post-municipios [{:keys [params]}]
+  (db/create-municipios! params)
+  (response/found "/localidades/municipios"))
+(defn put-municipios [{:keys [params]}]
+  (db/update-municipios! params)
+  (response/found "/localidades/municipios"))
+(defn delete-municipios [{:keys [params]}]
+  (db/delete-municipios! params)
+  (response/found "/localidades/municipios"))
 
 (defn home-routes []
   [""
@@ -48,5 +57,8 @@
    ["/localidades/estados/nuevo" {:post post-estados}]
    ["/localidades/estados/actualizar" {:post put-estados}]
    ["/localidades/estados/eliminar" {:post delete-estados}]
+   ["/localidades/municipios/nuevo" {:post post-municipios}]
+   ["/localidades/municipios/actualizar" {:post put-municipios}]
+   ["/localidades/municipios/eliminar" {:post delete-municipios}]
    ])
 

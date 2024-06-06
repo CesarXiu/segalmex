@@ -69,6 +69,12 @@
         var selectedOption = select.options[select.selectedIndex];
         input.value = selectedOption.textContent;
     });
+    document.addEventListener('DOMContentLoaded', function() {
+        var select = document.getElementById('estado_id');
+        var input = document.getElementById('nuevo_nombre');
+        var selectedOption = select.options[select.selectedIndex];
+        input.value = selectedOption.textContent;
+    });
     function enviar(url) {
         var form = document.getElementById('estado-form');
         form.action = url;
