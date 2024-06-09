@@ -8,6 +8,12 @@ SELECT municipios.municipio_id, municipios.nombre, municipios.estado_id, estados
 -- :doc Obtener los localidades
 SELECT localidades.localidad_id, localidades.nombre, localidades.municipio_id, municipios.nombre AS nombre_municipio 
 FROM localidades INNER JOIN municipios ON localidades.municipio_id = municipios.municipio_id
+-- :name get-beneficiarios :? :*
+-- :doc Obtener a los beneficiarios registrados
+SELECT * FROM beneficiarios
+-- :name get-caders :? :*
+-- :doc Obtener los cader registrados
+SELECT * FROM indice
 
 -- :name create-estados! :! :n
 -- :Agregar un nuevo estado
@@ -24,6 +30,21 @@ VALUES (:nombre, :estado_id)
 INSERT INTO localidades
 (nombre, municipio_id)
 VALUES (:nombre, :municipio_id)
+-- :name create-beneficiarios! :! :n
+-- :Agregar un nuevo beneficiarios
+INSERT INTO beneficiarios
+(curp, nombres, primer_apellido, segundo_apellido, estado_id, municipio_id, localidad_id)
+VALUES (:curp, :nombres, :primer_apellido, :segundo_apellido, :estado_id, :municipio_id, :localidad_id)
+-- :name create-beneficiarios! :! :n
+-- :Agregar un nuevo beneficiarios
+INSERT INTO cader
+(curp, nombres, primer_apellido, segundo_apellido, estado_id, municipio_id, localidad_id)
+VALUES (:curp, :nombres, :primer_apellido, :segundo_apellido, :estado_id, :municipio_id, :localidad_id)
+-- :name create-cader! :! :n
+-- :Agregar un nuevo cader
+INSERT INTO cader
+(fecha, hora, curp, entrego_documentos, localidad_real)
+VALUES (:fecha, :hora, :curp, :entrego_documentos, :localidad_real) 
 
 -- :name update-estados! :! :n
 -- :doc Actualiza nombre de un estado
@@ -40,6 +61,16 @@ WHERE municipio_id = :municipio_id
 UPDATE localidades
 SET nombre = :nuevo_nombre, municipio_id = :nuevo_municipio_id
 WHERE localidad_id = :localidad_id
+-- :name update-beneficiarios! :! :n
+-- :doc Actualiza un beneficiario
+UPDATE beneficiarios
+SET nombres = :nombres, primer_apellido = :primer_apellido, segundo_apellido = :segundo_apellido, estado_id = :estado_id, municipio_id = :municipio_id, localidad_id = :localidad_id
+WHERE curp = :curp
+-- :name update-cader! :! :n
+-- :doc Actualizar un cader
+UPDATE cader
+SET fecha = :fecha, hora = :hora, curp = :curp, entrego_documentos = :entrego_documentos, localidad_real = :localidad_real
+WHERE cader_id = :cader_id
 
 -- :name delete-estados! :! :n
 -- :doc Eliminar un estado
@@ -53,6 +84,14 @@ WHERE municipio_id = :municipio_id
 -- :doc Eliminar un estado
 DELETE FROM localidades
 WHERE localidad_id = :localidad_id
+-- :name delete-beneficiarios! :! :n
+-- :doc Eliminar un beneficiarios
+DELETE FROM beneficiarios
+WHERE curp = :curp
+-- :name delete-cader! :! :n
+-- :doc Eliminar un cader
+DELETE FROM cader
+WHERE cader_id = :cader_id
 
 -- :name clear-estados! :! :*
 -- :doc Eliminar todos los estados

@@ -393,3 +393,287 @@ DROP TABLE cader; [42102-200]
 	at nrepl.middleware.session$session_exec$main_loop__15954.invoke(session.clj:201)
 	at clojure.lang.AFn.run(AFn.java:22)
 	at java.base/java.lang.Thread.run(Thread.java:829)
+2024-06-08 23:18:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CURP VARCHAR(30)": "'aced00057372001d636c6f6a7572652e6c616e672e50657273697374656e74566563746f72926bb181a556ad33020005490003636e7449000573686966744c0... (858)"; SQL statement:
+INSERT INTO beneficiarios
+(curp, nombres, primer_apellido, segundo_apellido, estado_id, municipio_id, localidad_id)
+VALUES (?, ?, ?, ?, ?, ?, ?) [22001-200]
+2024-06-08 23:27:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CURP VARCHAR(30)": "'aced00057372001d636c6f6a7572652e6c616e672e50657273697374656e74566563746f72926bb181a556ad33020005490003636e7449000573686966744c0... (894)"; SQL statement:
+INSERT INTO beneficiarios
+(curp, nombres, primer_apellido, segundo_apellido, estado_id, municipio_id, localidad_id)
+VALUES (?, ?, ?, ?, ?, ?, ?) [22001-200]
+2024-06-09 00:26:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad
+FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades 
+ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:26:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad
+FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades 
+ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:27:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad
+FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades 
+ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:27:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad
+FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades 
+ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:27:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad
+FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades 
+ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:28:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:28:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:29:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT cader.cader_id, cader.fecha, cader.hora, cader.curp, cader.entrego_documentos, cader.localidad_real, 
+beneficiarios.nombres, beneficiarios.primer_apellido, beneficiarios.segundo_apellido, estados.nombre AS nombre_estado, 
+municipios.nombre AS nombre_municipio, localidades.nombre AS nombre_localidad FROM cader INNER JOIN beneficiarios INNER JOIN estados INNER JOIN municipios INNER JOIN localidades ON cader.curp = beneficiarios.curp AND beneficiarios.estado_id = estados.estado_id AND beneficiarios.municipio_id = municipios.municipio_id AND beneficiarios.localidad_id = localidades.localidad_id [42102-200]
+2024-06-09 00:30:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT 
+    cader.cader_id, 
+    cader.fecha, 
+    cader.hora, 
+    cader.curp, 
+    cader.entrego_documentos, 
+    cader.localidad_real, 
+    beneficiarios.nombres, 
+    beneficiarios.primer_apellido, 
+    beneficiarios.segundo_apellido, 
+    estados.nombre AS nombre_estado, 
+    municipios.nombre AS nombre_municipio, 
+    localidades.nombre AS nombre_localidad 
+FROM 
+    cader 
+INNER JOIN 
+    beneficiarios ON cader.curp = beneficiarios.curp 
+INNER JOIN 
+    estados ON beneficiarios.estado_id = estados.estado_id 
+INNER JOIN 
+    municipios ON beneficiarios.municipio_id = municipios.municipio_id 
+INNER JOIN 
+    localidades ON beneficiarios.localidad_id = localidades.localidad_id; [42102-200]
+2024-06-09 00:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT 
+    cader.cader_id, 
+    cader.fecha, 
+    cader.hora, 
+    cader.curp, 
+    cader.entrego_documentos, 
+    cader.localidad_real, 
+    beneficiarios.nombres, 
+    beneficiarios.primer_apellido, 
+    beneficiarios.segundo_apellido, 
+    estados.nombre AS nombre_estado, 
+    municipios.nombre AS nombre_municipio, 
+    localidades.nombre AS nombre_localidad 
+FROM 
+    cader 
+INNER JOIN 
+    beneficiarios ON cader.curp = beneficiarios.curp 
+INNER JOIN 
+    estados ON beneficiarios.estado_id = estados.estado_id 
+INNER JOIN 
+    municipios ON beneficiarios.municipio_id = municipios.municipio_id 
+INNER JOIN 
+    localidades ON beneficiarios.localidad_id = localidades.localidad_id; [42102-200]
+2024-06-09 00:31:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT 
+    cader.cader_id, 
+    cader.fecha, 
+    cader.hora, 
+    cader.curp, 
+    cader.entrego_documentos, 
+    cader.localidad_real, 
+    beneficiarios.nombres, 
+    beneficiarios.primer_apellido, 
+    beneficiarios.segundo_apellido, 
+    estados.nombre AS nombre_estado, 
+    municipios.nombre AS nombre_municipio, 
+    localidades.nombre AS nombre_localidad 
+FROM 
+    cader 
+INNER JOIN 
+    beneficiarios ON cader.curp = beneficiarios.curp 
+INNER JOIN 
+    estados ON beneficiarios.estado_id = estados.estado_id 
+INNER JOIN 
+    municipios ON beneficiarios.municipio_id = municipios.municipio_id 
+INNER JOIN 
+    localidades ON beneficiarios.localidad_id = localidades.localidad_id; [42102-200]
+2024-06-09 00:41:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT 
+    cader.cader_id, 
+    cader.fecha, 
+    cader.hora, 
+    cader.curp, 
+    cader.entrego_documentos, 
+    cader.localidad_real, 
+    beneficiarios.nombres, 
+    beneficiarios.primer_apellido, 
+    beneficiarios.segundo_apellido, 
+    estados.nombre AS nombre_estado, 
+    municipios.nombre AS nombre_municipio, 
+    localidades.nombre AS nombre_localidad 
+FROM 
+    cader 
+INNER JOIN 
+    beneficiarios ON cader.curp = beneficiarios.curp 
+INNER JOIN 
+    estados ON beneficiarios.estado_id = estados.estado_id 
+INNER JOIN 
+    municipios ON beneficiarios.municipio_id = municipios.municipio_id 
+INNER JOIN 
+    localidades ON beneficiarios.localidad_id = localidades.localidad_id; [42102-200]
+2024-06-09 00:41:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT 
+    cader.cader_id, 
+    cader.fecha, 
+    cader.hora, 
+    cader.curp, 
+    cader.entrego_documentos, 
+    cader.localidad_real, 
+    beneficiarios.nombres, 
+    beneficiarios.primer_apellido, 
+    beneficiarios.segundo_apellido, 
+    estados.nombre AS nombre_estado, 
+    municipios.nombre AS nombre_municipio, 
+    localidades.nombre AS nombre_localidad 
+FROM 
+    cader 
+INNER JOIN 
+    beneficiarios ON cader.curp = beneficiarios.curp 
+INNER JOIN 
+    estados ON beneficiarios.estado_id = estados.estado_id 
+INNER JOIN 
+    municipios ON beneficiarios.municipio_id = municipios.municipio_id 
+INNER JOIN 
+    localidades ON beneficiarios.localidad_id = localidades.localidad_id; [42102-200]
+2024-06-09 00:42:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:44:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:45:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:45:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:48:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:49:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:49:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:50:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:50:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:55:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 00:55:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYOS" not found; SQL statement:
+SELECT * FROM apoyos [42102-200]
+2024-06-09 00:56:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYOS" not found; SQL statement:
+SELECT * FROM apoyos [42102-200]
+2024-06-09 00:56:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYOS" not found; SQL statement:
+SELECT * FROM apoyos [42102-200]
+2024-06-09 00:59:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 01:01:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 01:02:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 01:03:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADER" not found; SQL statement:
+SELECT * FROM cader [42102-200]
+2024-06-09 01:04:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYAME" not found; SQL statement:
+SELECT * FROM apoyame [42102-200]
+2024-06-09 01:05:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYAME" not found; SQL statement:
+SELECT * FROM apoyame [42102-200]
+2024-06-09 01:06:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYAME" not found; SQL statement:
+SELECT * FROM apoyame [42102-200]
+2024-06-09 01:07:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYAME" not found; SQL statement:
+SELECT * FROM apoyame [42102-200]
+2024-06-09 01:07:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYAME" not found; SQL statement:
+SELECT * FROM apoyame [42102-200]
+2024-06-09 01:08:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APOYAME" not found; SQL statement:
+SELECT * FROM apoyame [42102-200]
+2024-06-09 01:12:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:12:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]
+2024-06-09 01:19:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INDICE" not found; SQL statement:
+SELECT * FROM indice [42102-200]

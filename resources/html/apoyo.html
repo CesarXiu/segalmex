@@ -1,13 +1,17 @@
 {% extends "home.html" %}
 {% block nuevoRegistro %}
 <div class="content">
-    <form>
+    <form action="/cader/nuevo">
         <div class="field">
             <label class="label" for="curp">CURP:</label>
             <div class="control">
                 <select class="select" id="control" name="control" required>
-                    <option value="">Selecciona la CURP</option>
-                    <!-- Add options for states here -->
+                    <option value="" disabled selected hidden>Curp..</option>
+                        {% for beneficiario in beneficiarios %}
+                        <option value="{{beneficiario.curp}}">
+                            {{ beneficiario.curp }}
+                        </option>
+                        {% endfor %}
                 </select>
             </div>
         </div>
@@ -49,8 +53,10 @@
             <div class="control">
                 <div class="select">
                     <select id="localidad2" name="localidad2" required>
-                        <option value="">Selecciona una localidad</option>
-                        <!-- Add options for localities based on selected municipality here -->
+                        <option value="" disabled selected hidden>Localidad donde se entregó..</option>
+                        {% for localidad in localidades %}
+                        <option value="{{ localidad.localidad_id }}">{{ localidad.nombre }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
@@ -65,6 +71,14 @@
             <label class="label" for="horaEntrega">Hora de entrega:</label>
             <div class="control">
                 <input class="input" type="time" id="horaEntrega" name="horaEntrega" required>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" required>
+                    Entregó documentos
+                </label>
             </div>
         </div>
         <div class="field">

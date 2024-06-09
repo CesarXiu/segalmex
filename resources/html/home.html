@@ -19,7 +19,6 @@
           <th>ESTADO</th>
           <th>MUNICIPIO</th>
           <th>LOCALIDAD</th>
-          <th>CUADERNILLO</th>
           <th>LOCALIDAD REAL</th>
           <th>A. PATERNO</th>
           <th>A. MATERNO</th>
@@ -30,48 +29,21 @@
         </tr>
       </thead>
       <tbody>
+        {% for apoyo in cader%}
         <tr>
-          <td>1</td>
-          <td>Estado 1</td>
-          <td>Municipio 1</td>
-          <td>Localidad 1</td>
-          <td>1</td>
-          <td>Localidad 1</td>
-          <td>Apellido Paterno 1</td>
-          <td>Apellido Materno 1</td>
-          <td>Nombre 1</td>
-          <td>CURP 1</td>
-          <td>Fecha 1</td>
-          <td>Hora 1</td>
+          <td>{{ apoyo.cader_id }}</td>
+          <td>{{ apoyo.nombre_estado }}</td>
+          <td>{{ apoyo.nombre_municipio }}</td>
+          <td>{{ apoyo.nombre_localidad }}</td>
+          <td>{{ apoyo.localidad_real }}</td>
+          <td>{{ apoyo.primer_apellido }}</td>
+          <td>{{ apoyo.segundo_apellido }}</td>
+          <td>{{ apoyo.nombres }}</td>
+          <td>{{ apoyo.curp }}</td>
+          <td>{{ apoyo.fecha }}</td>
+          <td>{{ apoyo.hora }}</td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Estado 2</td>
-          <td>Municipio 2</td>
-          <td>Localidad 2</td>
-          <td>2</td>
-          <td>Localidad 2</td>
-          <td>Apellido Paterno 2</td>
-          <td>Apellido Materno 2</td>
-          <td>Nombre 2</td>
-          <td>CURP 2</td>
-          <td>Fecha 2</td>
-          <td>Hora 2</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Estado 3</td>
-          <td>Municipio 3</td>
-          <td>Localidad 3</td>
-          <td>3</td>
-          <td>Localidad 3</td>
-          <td>Apellido Paterno 3</td>
-          <td>Apellido Materno 3</td>
-          <td>Nombre 3</td>
-          <td>CURP 3</td>
-          <td>Fecha 3</td>
-          <td>Hora 3</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
     <a href="/apoyo" class="button is-primary">Agregar Registro</a>

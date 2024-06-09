@@ -24,6 +24,7 @@
               {:connection t-conn})))
     (is (= {}
            (db/get-estados t-conn {})))))
+
 #_(deftest test-estados
   (jdbc/with-transaction [t-conn *db* {:rollback-only true}]
     (is (= 1 (db/create-estados!
